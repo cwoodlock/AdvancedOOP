@@ -1,6 +1,6 @@
 package ie.gmit.sw;
 
-public class GameWindowLevel2 {
+public class GameWindowLevel2 extends GameWindowModel{
 
 	//Default return
 		private static GameWindowLevel2 instance;
