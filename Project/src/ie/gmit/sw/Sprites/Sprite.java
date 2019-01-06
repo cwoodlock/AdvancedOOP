@@ -15,6 +15,7 @@ import java.awt.image.*;
 
 import ie.gmit.sw.Direction;
 import ie.gmit.sw.Point;
+import ie.gmit.sw.GameView;
 
 public class Sprite { //Sprite belongs in some sort of hierarchy....
 	private String name; //The name of the sprite
@@ -76,19 +77,34 @@ public class Sprite { //Sprite belongs in some sort of hierarchy....
 	
 	public void move() { //This method is suspiciously like one I've seen already....
 		step(direction);
+		int posY = position.getY();
+		int posX = position.getX();
 		
+		//Find a better way to not hard-code these values
 		switch(direction.getOrientation()) {
 		case 1:
-			position.setY(position.getY() + 1); //UP
+			
+			if(posY < 9) {
+				position.setY(position.getY() + 1); //UP
+			}
 			break;
 		case 2:
-			position.setX(position.getX() - 1); //DOWN
+			
+			if(posX > 0) {
+				position.setX(position.getX() - 1); //DOWN
+			}
 			break;
 		case 3:
-			position.setX(position.getX() + 1); //LEFT
+			
+			if(posX < 9) {
+				position.setX(position.getX() + 1); //LEFT
+			}
 			break;
 		default:
-			position.setY(position.getY() - 1); //RIGHT
+			
+			if(posY > 0) {
+				position.setY(position.getY() - 1); //RIGHT
+			}
 			break;
 		}
 	}

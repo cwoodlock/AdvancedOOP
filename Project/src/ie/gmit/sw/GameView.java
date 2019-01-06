@@ -25,6 +25,7 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 	private static final int TILE_WIDTH = 128;
 	private static final int TILE_HEIGHT = 64;
 	private Sprite player;
+	//private Sprite player2;
 
 	//Do we really need two models like this?
 	private int[][] matrix;
@@ -42,7 +43,7 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 		this.matrix = matrix;
 		this.things = things;
 		
-		setBackground(Color.WHITE);
+		setBackground(Color.BLACK);
 		setDoubleBuffered(true); //Each image is buffered twice to avoid tearing / stutter
 		timer = new Timer(100, this); //calls the actionPerformed() method every 100ms
 		timer.start(); //Start the timer
@@ -57,7 +58,8 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 		objects = imageReader.loadImages("./resources/images/objects", objects);
 		//Using sprite factory we can now make the default sprite
 		//player = new Sprite("Player 1", new Point(0, 0), imgReader.loadBufferedImages("./resources/images/sprites/default", null));
-		player = SpriteFactory.getDefaultSprite("Player 1", new Point(0,0), imageReader.loadImages("./resources/images/sprites/default", null));
+		player = SpriteFactory.getDefaultSprite("Player 1", new Point(3,3), imageReader.loadImages("./resources/images/sprites/default", null));
+		//player2 = SpriteFactory.getDefaultSprite("Player 2", new Point(0,0), imageReader.loadImages("./resources/images/sprites/green", null));
 	}
 
 	public void toggleView() {
@@ -112,6 +114,10 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 		//Paint the player on  the ground
 		point = getIso(player.getPosition().getX(), player.getPosition().getY());
 		g2.drawImage(player.getImage(), point.getX(), point.getY(), null);
+		
+		//Paint the player on  the ground
+		//point = getIso(player2.getPosition().getX(), player2.getPosition().getY());
+		//g2.drawImage(player2.getImage(), point.getX(), point.getY(), null);
 	}
 	
 	//This method breaks the SRP
@@ -153,4 +159,5 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 	
 	public void keyTyped(KeyEvent e) {
 	} // Ignore
+	
 }
