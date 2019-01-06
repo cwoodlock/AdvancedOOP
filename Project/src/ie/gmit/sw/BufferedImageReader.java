@@ -12,6 +12,7 @@ public class BufferedImageReader implements ImageReader {
 	// Default return
 	private static BufferedImageReader instance;
 
+	//Generated methods
 	@Override
 	public Image[] readImages(String directory, Image[] img) {
 		// TODO Auto-generated method stub
@@ -23,6 +24,7 @@ public class BufferedImageReader implements ImageReader {
 		// TODO Auto-generated constructor stub
 	}
 
+	//Make an instance of buffered image reader or return the default instance
 	public static ImageReader getInstance() {
 		if (instance == null) {
 			return new BufferedImageReader();

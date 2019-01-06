@@ -48,22 +48,13 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 	}
 	
 	private void init() throws Exception {
-		tiles = loadImages("./resources/images/ground", tiles);
-		objects = loadImages("./resources/images/objects", objects);
-		player = new Sprite("Player 1", new Point(0, 0), loadImages("./resources/images/sprites/default", null));
-	}
-	
-	//This method breaks the SRP
-	private BufferedImage[] loadImages(String directory, BufferedImage[] img) throws Exception {
-		File dir = new File(directory);
-		File[] files = dir.listFiles();
-		Arrays.sort(files, (s, t) -> s.getName().compareTo(t.getName()));
+		//Get an instance of buffered image reader
+		BufferedImageReader imageReader = (BufferedImageReader) BufferedImageReader.getInstance();
 		
-		img = new BufferedImage[files.length];
-		for (int i = 0; i < files.length; i++) {
-			img[i] = ImageIO.read(files[i]);
-		}
-		return img;
+		//loadImages from imageReader
+		tiles = imageReader.loadImages("./resources/images/ground", tiles);
+		objects = imageReader.loadImages("./resources/images/objects", objects);
+		player = new Sprite("Player 1", new Point(0, 0), imageReader.loadImages("./resources/images/sprites/default", null));
 	}
 
 	public void toggleView() {
