@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.sw.GameWindowModels;
 
 //Factory class returns whatever gamewindow you choose
 public class GameWindowFactory {

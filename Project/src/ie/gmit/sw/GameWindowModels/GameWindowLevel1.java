@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.sw.GameWindowModels;
 
 public class GameWindowLevel1 extends GameWindowModel{
 	

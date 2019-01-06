@@ -3,6 +3,9 @@ package ie.gmit.sw;
 import java.awt.*;
 import javax.swing.*;
 
+import ie.gmit.sw.GameWindowModels.GameWindowFactory;
+import ie.gmit.sw.GameWindowModels.GameWindowModel;
+
 
 public class GameWindow {
 	
