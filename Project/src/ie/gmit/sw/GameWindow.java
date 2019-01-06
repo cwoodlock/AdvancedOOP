@@ -2,10 +2,12 @@ package ie.gmit.sw;
 
 import java.awt.*;
 import javax.swing.*;
+
+
 public class GameWindow {
 	
 	//Get whatever game window model you want
-	 GameWindowModel gameViewModel = GameWindowFactory.loadLevel2();
+	 GameWindowModel gameViewModel = GameWindowFactory.loadLevel1();
 	
 	public GameWindow() throws Exception {
 		GameView view = new GameView(gameViewModel.getModel(), gameViewModel.getObjects());

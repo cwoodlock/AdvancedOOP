@@ -7,7 +7,7 @@ public class GameWindowLevel1 extends GameWindowModel{
 	
 	//Constructor to create level 1
 	public GameWindowLevel1() {
-		int[][] model = { 
+		model = new int[][] { 
 				{ 1, 0, 0, 0, 0, 0 , 0, 0, 0, 2},
 				{ 0, 1, 0, 0, 0, 0 , 0, 0, 0, 2},
 				{ 0, 0, 2, 0, 0, 0 , 0, 0, 0, 2},
@@ -20,7 +20,7 @@ public class GameWindowLevel1 extends GameWindowModel{
 				{ 4, 4, 4, 4, 4, 3 , 1, 7, 7, 7}
 		};
 		
-		int[][] objects = { 
+		objects = new int[][] { 
 				{ 0, 0, 0, 5, 5, 5 , 5, 5, 5, 0},
 				{ 5, 0, 0, 0, 5, 5 , 5, 5, 5, 0},
 				{ 5, 5, 0, 0, 0, 5 , 5, 5, 5, 9},

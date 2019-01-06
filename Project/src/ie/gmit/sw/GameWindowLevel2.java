@@ -7,7 +7,9 @@ public class GameWindowLevel2 extends GameWindowModel{
 		
 		//Constructor to create level 1
 		public GameWindowLevel2() {
-			int[][] model = { 
+			//Change how matrices were instantiated after getting error.
+			//https://stackoverflow.com/questions/5307283/exception-in-thread-awt-eventqueue-0
+			model = new int[][] { 
 					{ 4, 4, 4, 4, 4, 3 , 1, 7, 7, 7},
 					{ 4, 4, 4, 4, 5, 3 , 1, 6, 6, 6},
 					{ 4, 4, 4, 5, 3, 3 , 1, 0, 0, 0},
@@ -21,7 +23,7 @@ public class GameWindowLevel2 extends GameWindowModel{
 					
 			};
 			
-			int[][] objects = { 
+			objects = new int[][] { 
 					{ 0, 0, 0, 0, 0, 0 , 0, 0, 0, 0},
 					{ 0, 0, 0, 0, 0, 0 , 0, 0, 0, 0},
 					{ 0, 0, 0, 0, 0, 0 , 0, 0, 0, 0},
