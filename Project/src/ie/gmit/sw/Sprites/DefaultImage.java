@@ -1,7 +1,8 @@
-package ie.gmit.sw;
+package ie.gmit.sw.Sprites;
 
 import java.awt.image.BufferedImage;
 import ie.gmit.sw.ImageReader.*;
+import ie.gmit.sw.Point;
 
 public class DefaultImage extends Sprite {
 
@@ -14,6 +15,11 @@ public class DefaultImage extends Sprite {
 		super(name, p);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public DefaultImage(String name, Point p, BufferedImage[] img) {
+        super(name, p, img);
+     // TODO Auto-generated constructor stub
+    }
 
 	public BufferedImage[][] getImg() throws Exception {
 		// Get image for the default player sprite

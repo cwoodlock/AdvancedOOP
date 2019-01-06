@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.sw.Sprites;
 
 /*
  *   
@@ -12,6 +12,10 @@ package ie.gmit.sw;
  */
 
 import java.awt.image.*;
+
+import ie.gmit.sw.Direction;
+import ie.gmit.sw.Point;
+
 public class Sprite { //Sprite belongs in some sort of hierarchy....
 	private String name; //The name of the sprite
 	private BufferedImage[][] images = new BufferedImage[4][3]; //The images used in the animation 
@@ -87,5 +91,9 @@ public class Sprite { //Sprite belongs in some sort of hierarchy....
 			position.setY(position.getY() - 1); //RIGHT
 			break;
 		}
+	}
+	
+	public void setImage(BufferedImage[][] img){
+		this.images = img;
 	}
 }

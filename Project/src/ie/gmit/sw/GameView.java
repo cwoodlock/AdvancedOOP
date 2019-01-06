@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.Timer;
 
 import ie.gmit.sw.ImageReader.BufferedImageReader;
+import ie.gmit.sw.Sprites.Sprite;
+import ie.gmit.sw.Sprites.SpriteFactory;
 
 /*
  * This is a God class and is doing way too much. The instance variables cover everything from isometric to 
@@ -54,7 +56,8 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 		tiles = imageReader.loadImages("./resources/images/ground", tiles);
 		objects = imageReader.loadImages("./resources/images/objects", objects);
 		//Using sprite factory we can now make the default sprite
-		player = SpriteFactory.getDefaultSprite("Player 1", new Point(0, 0));
+		//player = new Sprite("Player 1", new Point(0, 0), imgReader.loadBufferedImages("./resources/images/sprites/default", null));
+		player = SpriteFactory.getDefaultSprite("Player 1", new Point(0,0), imageReader.loadImages("./resources/images/sprites/default", null));
 	}
 
 	public void toggleView() {
