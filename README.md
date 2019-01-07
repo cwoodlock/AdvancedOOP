@@ -3,7 +3,7 @@ This is a repository for my Advanced Object Oriented Project. Student Number G00
 Github: https://github.com/cwoodlock/AdvancedOOP
 The project skeleton was adapted from source code provided by lecturer.
 
-**NOTE** Most current version on github does not run however the previous commit does
+**NOTE** Most current version on github does not run however the commit where I added ISO interface works
 
 In regards to the project were were asked to implement some design patterns into the project. I used a Factory design patter when making different levels 
 which each used the singleton design pattern. I also attempted to make a sprite factory and sprite classes these would be used to load the different sprites.
