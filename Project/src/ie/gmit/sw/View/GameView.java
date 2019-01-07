@@ -7,11 +7,11 @@ import javax.swing.*;
 import javax.swing.Timer;
 
 import ie.gmit.sw.Controller.Direction;
+import ie.gmit.sw.Controller.PaintController;
 import ie.gmit.sw.Controller.Point;
 import ie.gmit.sw.ImageReader.BufferedImageReader;
 import ie.gmit.sw.Sprites.Sprite;
 import ie.gmit.sw.Sprites.SpriteFactory;
-import ie.gmit.sw.Controller.Iso;;
 
 /*
  * This is a God class and is doing way too much. The instance variables cover everything from isometric to 
@@ -19,14 +19,12 @@ import ie.gmit.sw.Controller.Iso;;
  * another.
  * 
  */
-public class GameView extends JPanel implements ActionListener, KeyListener { 
+public class GameView extends PaintController implements ActionListener, KeyListener { 
 	private static final long serialVersionUID = 777L;
-	private static final int DEFAULT_IMAGE_INDEX = 0;
+	
 	
 	//Encapsulate the things that vary...
 	public static final int DEFAULT_VIEW_SIZE = 1280;
-	private static final int TILE_WIDTH = 128;
-	private static final int TILE_HEIGHT = 64;
 	private Sprite player;
 	//private Sprite player2;
 
@@ -74,56 +72,6 @@ public class GameView extends JPanel implements ActionListener, KeyListener {
 		this.repaint();
 	}
 
-	public void paintComponent(Graphics g) { //This method needs to execute quickly...
-		super.paintComponent(g);
-		Graphics2D g2 = (Graphics2D) g;
-		int imageIndex = -1, x1 = 0, y1 = 0;
-		Point point;
-		
-		for (int row = 0; row < matrix.length; row++) {
-			for (int col = 0; col < matrix[row].length; col++) {
-				imageIndex = matrix[row][col];
-				
-				if (imageIndex >= 0 && imageIndex < tiles.length) {
-					//Paint the ground tiles
-					if (isIsometric) {
-						x1 = Iso.getIsoX(col, row);
-						y1 = Iso.getIsoY(col, row);
-						
-						g2.drawImage(tiles[DEFAULT_IMAGE_INDEX], x1, y1, null);
-						if (imageIndex > DEFAULT_IMAGE_INDEX) {
-							g2.drawImage(tiles[imageIndex], x1, y1, null);
-						}
-					} else {
-						x1 = col * TILE_WIDTH;
-						y1 = row * TILE_HEIGHT;
-	        			if (imageIndex < cartesian.length) {
-	        				g2.setColor(cartesian[imageIndex]);
-	        			}else {
-	        				g2.setColor(Color.WHITE);
-	        			}
-						
-	        			g2.fillRect(x1, y1, TILE_WIDTH, TILE_WIDTH);
-					}
-					//Paint the object or things on the ground
-					
-					
-					imageIndex = things[row][col];
-					g2.drawImage(objects[imageIndex], x1, y1, null);
-				}
-			}
-		}
-		
-		//Paint the player on  the ground
-		point = Iso.getIso(player.getPosition().getX(), player.getPosition().getY());
-		g2.drawImage(player.getImage(), point.getX(), point.getY(), null);
-		
-		//Paint the player on  the ground
-		//point = getIso(player2.getPosition().getX(), player2.getPosition().getY());
-		//g2.drawImage(player2.getImage(), point.getX(), point.getY(), null);
-	}
-	
-	
 	
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {

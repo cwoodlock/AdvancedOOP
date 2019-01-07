@@ -6,8 +6,9 @@ import java.io.File;
 import java.util.Arrays;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
-public class BufferedImageReader implements ImageReader {
+public class BufferedImageReader extends JPanel implements ImageReader {
 
 	// Default return
 	private static BufferedImageReader instance;
