@@ -13,9 +13,9 @@ package ie.gmit.sw.Sprites;
 
 import java.awt.image.*;
 
-import ie.gmit.sw.Direction;
-import ie.gmit.sw.Point;
-import ie.gmit.sw.GameView;
+import ie.gmit.sw.Controller.Direction;
+import ie.gmit.sw.Controller.Point;
+import ie.gmit.sw.View.GameView;
 
 public class Sprite { //Sprite belongs in some sort of hierarchy....
 	private String name; //The name of the sprite

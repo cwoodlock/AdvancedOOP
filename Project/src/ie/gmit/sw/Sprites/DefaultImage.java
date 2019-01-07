@@ -1,8 +1,9 @@
 package ie.gmit.sw.Sprites;
 
 import java.awt.image.BufferedImage;
+
+import ie.gmit.sw.Controller.Point;
 import ie.gmit.sw.ImageReader.*;
-import ie.gmit.sw.Point;
 
 public class DefaultImage extends Sprite {
 

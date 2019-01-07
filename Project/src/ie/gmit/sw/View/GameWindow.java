@@ -1,4 +1,4 @@
-package ie.gmit.sw;
+package ie.gmit.sw.View;
 
 import java.awt.*;
 import javax.swing.*;
@@ -10,6 +10,7 @@ import ie.gmit.sw.GameWindowModels.GameWindowModel;
 public class GameWindow {
 	
 	//Get whatever game window model you want
+	//GameWindowModel gameViewModel = GameWindowFactory.loadLevel2();
 	 GameWindowModel gameViewModel = GameWindowFactory.loadLevel1();
 	
 	public GameWindow() throws Exception {

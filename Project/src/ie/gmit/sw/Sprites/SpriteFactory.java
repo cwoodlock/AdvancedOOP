@@ -2,7 +2,7 @@ package ie.gmit.sw.Sprites;
 
 import java.awt.image.BufferedImage;
 
-import ie.gmit.sw.Point;
+import ie.gmit.sw.Controller.Point;
 
 //Sprite factory to generate sprites
 public class SpriteFactory {
